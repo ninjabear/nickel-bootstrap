@@ -17,19 +17,16 @@ fn main() {
      println!("Request: {:?}", request.origin.uri);
      });
 
-   nickel.utilize(router!(
+   fn handler<'a>(_: &mut Request, res: Response<'a>) -> MiddlewareResult<'a> {
 
-      get "**" => |request, response| {
+     let mut data = HashMap::<&str, &str>::new();
+     data.insert("title", "nickel-bootstrap");
+     data.insert("message", "hello from nickel bootstrap!");
+     Ok(Halt(try!(res.render("templates/index.mustache", &data))))
+     
+   }
 
-        let mut data = HashMap::<&str, &str>::new();
-        data.insert("title", "nickel-bootstrap");
-        data.insert("message", "hello from nickel bootstrap!");
+   nickel.get("**", middleware!(@handler));
 
-        Ok( response.render("mustache/index.mustache", &data) );
-      }
-
-     ));
-
-   println!("Nickel is running.");
    nickel.listen(IpAddr::new_v4(127,0,0,1), 6767);
 }
