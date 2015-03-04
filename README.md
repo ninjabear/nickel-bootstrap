@@ -18,3 +18,5 @@ A seed implementation of nickel/bootstrap
    ]);
    ```
  - logging etc can be pulled out of "utilize" into something else then so no need to "utilize" everything
+* using ```{rust} Ok(Halt(response.render...))``` in the ```{rust} router!``` macro confuses compiler. Error as follows: ```error: unable to infer enough type information about `_`; type annotations required [E0282]```
+  - I think its asking for extra information, but its a closure. Not sure how that works.
