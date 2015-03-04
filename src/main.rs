@@ -5,7 +5,6 @@ extern crate nickel;
 use std::collections::HashMap;
 use std::net::IpAddr;
 use nickel::*;
-use std::io;
 
 fn main() {
 
@@ -23,7 +22,7 @@ fn main() {
      data.insert("title", "nickel-bootstrap");
      data.insert("message", "hello from nickel bootstrap!");
      Ok(Halt(try!(res.render("templates/index.mustache", &data))))
-     
+
    }
 
    nickel.get("**", middleware!(@handler));
