@@ -2,8 +2,10 @@
 extern crate nickel;
 #[macro_use] extern crate nickel_macros;
 
+use std::collections::HashMap;
 use std::net::IpAddr;
 use nickel::*;
+use std::io;
 
 fn main() {
 
@@ -16,9 +18,16 @@ fn main() {
      });
 
    nickel.utilize(router!(
+
       get "**" => |request, response| {
-        "hello world"
+
+        let mut data = HashMap::<&str, &str>::new();
+        data.insert("title", "nickel-bootstrap");
+        data.insert("message", "hello from nickel bootstrap!");
+
+        Ok( response.render("mustache/index.mustache", &data) );
       }
+
      ));
 
    println!("Nickel is running.");
