@@ -9,6 +9,8 @@ fn main() {
 
    let mut nickel = Nickel::new();
 
+   nickel.utilize(StaticFilesHandler::new("public/"));
+
    nickel.utilize(middleware! { |request|
      println!("Request: {:?}", request.origin.uri);
      });
