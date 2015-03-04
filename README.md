@@ -20,3 +20,5 @@ A seed implementation of nickel/bootstrap
  - logging etc can be pulled out of "utilize" into something else then so no need to "utilize" everything
 * using ```Ok(Halt(response.render...))``` in the ```router!``` macro confuses compiler. Error as follows: ```error: unable to infer enough type information about `_`; type annotations required [E0282]```
   - I think its asking for extra information, but its a closure. Not sure how that works.
+
+* mustache partials don't appear to work. They may not be implemented.
