@@ -4,6 +4,7 @@ version = "0.0.1"
 dependencies = [
  "nickel 0.1.0 (git+https://github.com/nickel-org/nickel.rs.git)",
  "nickel_macros 0.0.1 (git+https://github.com/nickel-org/nickel.rs.git)",
+ "rust-mustache 0.3.0 (git+https://github.com/nickel-org/rust-mustache.git)",
 ]
 
 [[package]]

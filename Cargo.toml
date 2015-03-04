@@ -12,3 +12,6 @@ git = "https://github.com/nickel-org/nickel.rs.git"
 
 git = "https://github.com/nickel-org/nickel.rs.git"
 path = "nickel_macros"
+
+[dependencies.rust-mustache]
+git = "https://github.com/nickel-org/rust-mustache.git"

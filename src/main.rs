@@ -1,10 +1,14 @@
 #![feature(net)]
+#![feature(path)]
 extern crate nickel;
 #[macro_use] extern crate nickel_macros;
+extern crate mustache;
 
 use std::collections::HashMap;
 use std::net::IpAddr;
 use nickel::*;
+use std::path::PathBuf;
+use mustache::*;
 
 fn main() {
 
@@ -16,16 +20,24 @@ fn main() {
      println!("Request: {:?}", request.origin.uri);
      });
 
-   fn handler<'a>(_: &mut Request, res: Response<'a>) -> MiddlewareResult<'a> {
+   nickel.utilize(router!(
 
-     let mut data = HashMap::<&str, &str>::new();
-     data.insert("title", "nickel-bootstrap");
-     data.insert("message", "hello from nickel bootstrap!");
-     Ok(Halt(try!(res.render("templates/index.mustache", &data))))
+   get "**" => |request, response| {
+      let mut data = HashMap::new();
+      data.insert("title".to_string(), StrVal("nickel-bootstrap".to_string()));
+      data.insert("message".to_string(), StrVal("hello from nickel bootstrap!".to_string()));
 
+      let template = Context::new(PathBuf::new("mustache"))
+          .compile_path(PathBuf::new("base"))
+          .ok()
+          .unwrap();
+
+      let mut resp = vec![];
+      template.render_data(&mut resp, &Map(data));
+      String::from_utf8(resp).unwrap()
    }
 
-   nickel.get("**", middleware!(@handler));
+   ));
 
    nickel.listen(IpAddr::new_v4(127,0,0,1), 6767);
 }
