@@ -12,7 +12,7 @@ A seed implementation of nickel/bootstrap
 * deployment strategies? Far future item
 * utilize stuff is a bit janky. Would ```use``` be a better word?
  - e.g.
-   ```{rust}
+   ```
    nickel.use(routes![
      ...
    ]);
