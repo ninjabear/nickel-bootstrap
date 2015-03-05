@@ -2,6 +2,9 @@
 
 A seed implementation of nickel/bootstrap
 
+## props
+
+https://github.com/bootstrap-ruby/sinatra-bootstrap
 
 ## Notes
 
