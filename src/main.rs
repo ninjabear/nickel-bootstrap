@@ -30,7 +30,7 @@ fn main() {
    get "**" => |request, response| {
       let mut data = HashMap::new();
       data.insert("title".to_string(), StrVal("nickel-bootstrap".to_string()));
-      data.insert("message".to_string(), StrVal("hello from nickel bootstrap!".to_string()));
+      data.insert("message".to_string(), StrVal("Welcome to nickel-bootstrap!".to_string()));
 
       let template_file = "templates/all_for_one.mustache";
 
