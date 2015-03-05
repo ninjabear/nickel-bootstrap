@@ -6,7 +6,7 @@ A seed implementation of nickel/bootstrap
 
 https://github.com/bootstrap-ruby/sinatra-bootstrap
 
-## Notes
+## notes taken during implementation
 
 * would be helpful if docs listed what you need in your Cargo.toml
 * need to list where resources go. Some kind of default for static files?
