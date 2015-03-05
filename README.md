@@ -22,3 +22,5 @@ A seed implementation of nickel/bootstrap
   - I think its asking for extra information, but its a closure. Not sure how that works.
 
 * mustache partials don't appear to work. They may not be implemented.
+* images get garbled for some reason when served. Mime type wrong?
+  - Nope thats not it, i think the mime type is wrong, but only for non existent images e.g. /images/adjsfasdfasdfas.jpg (doesn't exist)
