@@ -24,7 +24,7 @@
 }
 .navbar-default .navbar-nav > li > a {
   color: #f3f3f3;
-  line-height: 23px;
+  line-height: 25px;
 }
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
   color: #d3dc4e;
@@ -78,7 +78,7 @@
 @media (max-width: 767px) {
   .navbar-default .navbar-nav .open .dropdown-menu > li > a {
     color: #f3f3f3;
-    line-height: 23px;
+    line-height: 25px;
   }
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
     color: #d3dc4e;
@@ -124,7 +124,7 @@ h2 {
 }
 
 .navbar-right {
-  padding-right: 5px;
+  padding-right: 20px;
 }
 
 html, body{
