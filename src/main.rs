@@ -1,13 +1,11 @@
 #![feature(net)]
 extern crate nickel;
 #[macro_use] extern crate nickel_macros;
-extern crate mustache;
 extern crate "rustc-serialize" as rustc_serialize;
 
 use std::collections::HashMap;
 use std::net::IpAddr;
 use nickel::*;
-// use mustache::*;
 use rustc_serialize::Encodable;
 
 
