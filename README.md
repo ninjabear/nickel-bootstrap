@@ -2,28 +2,31 @@
 
 A seed implementation of nickel/bootstrap
 
-## props
+# Getting started
 
-https://github.com/bootstrap-ruby/sinatra-bootstrap
+1. [Install the latest version of rust](http://doc.rust-lang.org/1.0.0-alpha.2/book/installing-rust.html).
+2. [Clone this repo](https://github.com/ninjabear/nickel-bootstrap)
+3. Use ```cargo run``` to build and run it.
 
-## notes taken during implementation
+Providing everything went swimmingly - you should have nickel-bootstrap loaded and listening on ```127.0.0.1:6767```.
 
-* would be helpful if docs listed what you need in your Cargo.toml
-* need to list where resources go. Some kind of default for static files?
- - like sinatra has "public"
- - templates could do with a default too, "views" or "templates" perhaps
-* deployment strategies? Far future item
-* utilize stuff is a bit janky. Would ```use``` be a better word?
- - e.g.
-   ```
-   nickel.use(routes![
-     ...
-   ]);
-   ```
- - logging etc can be pulled out of "utilize" into something else then so no need to "utilize" everything
-* using ```Ok(Halt(response.render...))``` in the ```router!``` macro confuses compiler. Error as follows: ```error: unable to infer enough type information about `_`; type annotations required [E0282]```
-  - I think its asking for extra information, but its a closure. Not sure how that works.
+# Moving on
 
-* mustache partials don't appear to work. They may not be implemented.
-* images get garbled for some reason when served. Mime type wrong?
-  - Nope thats not it, i think the mime type is wrong, but only for non existent images e.g. /images/adjsfasdfasdfas.jpg (doesn't exist)
+This is intended as a starting point for your own [nickel.rs](https://github.com/nickel-org/nickel.rs) webapps. nickel-bootstrap is under the MIT licence, feel free to turn it into whatever you wish.
+
+## Where to start
+
+I've picked some directories for holding files, but nickel is hot off the press, things haven't stabilized yet. 
+
+* I put my mustache templates in ./templates
+* I put my static files in ./public
+* Routes are configured in ./src/main.rs
+
+# Contributing
+
+Please do! Starring and sharing counts.
+
+# Thanks
+
+* [nickel.rs](https://github.com/nickel-org/nickel.rs)
+* [sinatra-bootstrap](https://github.com/bootstrap-ruby/sinatra-bootstrap)
