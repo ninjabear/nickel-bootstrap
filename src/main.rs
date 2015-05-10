@@ -8,6 +8,10 @@ use nickel::*;
 fn main() {
    let mut nickel = Nickel::new();
 
+   nickel.utilize(middleware! { |request|
+     println!("Request: {:?}", request.origin.uri);
+   });
+
    nickel.get("/", middleware! { |_req, res|
       let mut data = HashMap::<&str, &str>::new();
       data.insert("title", "nickel-bootstrap");
@@ -17,10 +21,6 @@ fn main() {
    });
 
    nickel.utilize(StaticFilesHandler::new("public/"));
-
-   nickel.utilize(middleware! { |request|
-     println!("Request: {:?}", request.origin.uri);
-   });
 
    nickel.listen("127.0.0.1:6767");
 }
