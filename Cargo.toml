@@ -5,7 +5,7 @@ version = "0.0.1"
 authors = ["ninjabear"]
 
 [dependencies.nickel]
-version = "*"
+git = "https://github.com/nickel-org/nickel.rs.git"
 
 [dependencies]
 rustc-serialize = "*"

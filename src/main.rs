@@ -3,29 +3,31 @@ extern crate nickel;
 extern crate rustc_serialize;
 
 use std::collections::HashMap;
-use std::net::IpAddr;
 use nickel::*;
-use rustc_serialize::Encodable;
 
 
 fn main() {
 
    let mut nickel = Nickel::new();
-   let mut router = Nickel::router();
 
-   router.get("**", middleware! { |req, mut resp|
-
+   /*fn handler<'a>(_: &mut Request, res: Response<'a>) -> MiddlewareResult<'a> {
      let mut data = HashMap::<&str, &str>::new();
-
      data.insert("title", "nickel-bootstrap");
      data.insert("message", "Welcome to");
      data.insert("message_line_two", "You can edit this to get started...");
 
-     resp.render("templates/all_for_one.mustache", data);
+     res.render("templates/all_for_one.mustache", &data);
+   }*/
 
-  });
+   fn handler<'a>(_: &mut Request, res: Response<'a>) -> MiddlewareResult<'a> {
+     let mut data = HashMap::<&str, &str>::new();
+     data.insert("title", "nickel-bootstrap");
+     data.insert("message", "Welcome to");
+     data.insert("message_line_two", "You can edit this to get started...");
+     res.render("templates/all_for_one.mustache", &data)
+   }
 
-   nickel.utilize(router);
+   nickel.get("**", handler);
 
    nickel.utilize(StaticFilesHandler::new("public/"));
 
