@@ -24,7 +24,7 @@ fn main() {
      data.insert("title", "nickel-bootstrap");
      data.insert("message", "Welcome to");
      data.insert("message_line_two", "You can edit this to get started...");
-     res.render("templates/all_for_one.mustache", &data)
+     res.render("templates/index.mustache", &data)
    }
 
    nickel.get("/", handler);
