@@ -27,7 +27,7 @@ fn main() {
      res.render("templates/all_for_one.mustache", &data)
    }
 
-   nickel.get("**", handler);
+   nickel.get("/", handler);
 
    nickel.utilize(StaticFilesHandler::new("public/"));
 
