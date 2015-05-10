@@ -1,6 +1,5 @@
 #[macro_use]
 extern crate nickel;
-extern crate rustc_serialize;
 
 use std::collections::HashMap;
 use nickel::*;

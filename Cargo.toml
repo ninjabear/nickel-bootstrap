@@ -6,6 +6,3 @@ authors = ["ninjabear"]
 
 [dependencies.nickel]
 git = "https://github.com/nickel-org/nickel.rs.git"
-
-[dependencies]
-rustc-serialize = "*"
