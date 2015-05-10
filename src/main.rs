@@ -4,7 +4,7 @@ extern crate nickel;
 use std::collections::HashMap;
 use nickel::*;
 
-fn main() {
+pub fn main() {
    let mut nickel = Nickel::new();
 
    nickel.utilize(middleware! { |request|
