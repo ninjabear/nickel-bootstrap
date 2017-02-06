@@ -1,4 +1,4 @@
-# nickel-bootstrap
+# nickel-bootstrap [![Build Status](https://travis-ci.org/ninjabear/nickel-bootstrap.svg?branch=master)](https://travis-ci.org/ninjabear/nickel-bootstrap)
 
 A seed implementation of nickel/bootstrap
 
